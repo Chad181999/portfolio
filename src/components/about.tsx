@@ -13,13 +13,13 @@ function about() {
         <Box width='35%' pr='50px'>
           <Heading fontSize='40px' color='#111111' fontWeight='700' pb='30px'>Get to know me!</Heading>
           <Text fontSize='18px' color='#555' pb='20px'>
-          I'm a Frontend Web Developer building the Front-end of Websites and Web Applications that leads to the success of the overall product. Check out some of my work in the Projects section.
+          I&apos;m a Frontend Web Developer building the Front-end of Websites and Web Applications that leads to the success of the overall product. Check out some of my work in the Projects section.
           </Text>
           <Text fontSize='18px' color='#555' pb='20px'>
           I also like sharing content related to the stuff that I have learned over the years in Web Development so it can help other people of the Dev Community. Feel free to Connect or Follow me on my Linkedin where I post useful content related to Web Development and Programming
           </Text>
           <Text fontSize='18px' color='#555' pb='20px'>
-          I'm open to Job opportunities where I can contribute, learn and grow. If you have a good opportunity that matches my skills and experience then don't hesitate to contact me.
+          I&apos;m open to Job opportunities where I can contribute, learn and grow. If you have a good opportunity that matches my skills and experience then don&apos;t hesitate to contact me.
           </Text>
           <Button bgColor='#FACF0F' size='lg' fontFamily='Source Sans Pro' color='#333333' p='0 60px' mt='30px'>Contact</Button>
         </Box>
