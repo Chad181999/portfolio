@@ -10,7 +10,7 @@ const Home = () => {
         <Flex h='100vh' justifyContent='center' alignItems='center' position='relative' z-zIndex='1'>
             <Box>
                 <Flex justifyContent='center' pb='30px'>
-                    <Image 
+                    <Image
                     borderRadius={'50%'}
                     boxSize='250px'
                     objectFit='cover'
@@ -26,8 +26,8 @@ const Home = () => {
                 </Flex>
                 <Box display='flex' justifyContent='center'>
                     <Button bgColor='#FACF0F' size='lg' fontFamily='Source Sans Pro' color='#333333' p='0 60px' onClick={()=> router.push('#project')}>PROJECTS</Button>
-                </Box> 
-            </Box> 
+                </Box>
+            </Box>
         </Flex>
     </Box>
   )
