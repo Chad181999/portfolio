@@ -7,7 +7,7 @@ const Home = () => {
   return (
     <Box bgImage={'/common-bg.svg'} bgRepeat='no-repeat' bgSize='cover' w='100%' h='100%' position='relative' id='home'>
         <Box position='absolute' w='100%' h='100%' bgGradient='linear(to-r, rgba(245,245,245,.8), rgba(245,245,245,.8))'></Box>
-        <Flex h='100vh' justifyContent='center' alignItems='center' position='relative' z-zIndex='1'>
+        <Flex h='100vh' justifyContent='center' alignItems='center' position='relative' z-zindex='1'>
             <Box>
                 <Flex justifyContent='center' pb='30px'>
                     <Image
