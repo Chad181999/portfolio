@@ -1,106 +1,49 @@
-'use client'
+import React from 'react'
+import { Box, Container, Heading, HStack, Image, Link } from '@chakra-ui/react'
+import { useRouter } from 'next/router'
 
-import {
-  Box,
-  Flex,
-  Avatar,
-  HStack,
-  Text,
-  IconButton,
-  Button,
-  Menu,
-  MenuButton,
-  MenuList,
-  MenuItem,
-  MenuDivider,
-  useDisclosure,
-  useColorModeValue,
-  Stack,
-} from '@chakra-ui/react'
-import { HamburgerIcon, CloseIcon } from '@chakra-ui/icons'
 
-interface Props {
-  children: React.ReactNode
-}
-
-const Links = ['Dashboard', 'Projects', 'Team']
-
-const NavLink = (props: Props) => {
-  const { children } = props
-
+const NavBar = () => {
+    const router = useRouter()
   return (
-    <Box
-      as="a"
-      px={2}
-      py={1}
-      rounded={'md'}
-      _hover={{
-        textDecoration: 'none',
-        bg: useColorModeValue('gray.200', 'gray.700'),
-      }}
-      href={'#'}>
-      {children}
+    <Box width='100%' bg='#FFFFFF' color='white' position='fixed' top='0' zIndex='100000'>
+    <Container height='30px' maxW='xxl' display='flex' justifyContent='space-between' alignItems='center' p='40px 80px'>
+        <Box display='flex' justifyContent='space-evenly' alignItems='center'>
+        <Image
+        boxSize='70px'
+        objectFit='cover'
+        src='/chad1.png'
+        alt='Richard T. Dela Cruz Jr.' onClick={()=> router.push('#home')}>
+        </Image>
+        <Heading fontSize='21px' fontFamily='Source Sans Pro' color='#333333' fontWeight='700' p='0 0 0 25px'>
+            RICHARD DELA CRUZ JR.
+        </Heading>
+        </Box>
+        <HStack spacing='70px' fontSize='18px' fontFamily='Source Sans Pro' color='#333333' fontWeight='700'>
+            <Box>
+                <Link onClick={()=> router.push('#home')}>
+                    HOME
+                </Link>
+            </Box>
+            <Box>
+                <Link onClick={()=> router.push('#about')}>
+                    ABOUT
+                </Link>
+            </Box>
+            <Box>
+                <Link onClick={()=> router.push('#project')}>
+                    PROJECTS
+                </Link>
+            </Box>
+            <Box>
+                <Link onClick={()=> router.push('#contact')}>
+                    CONTACT
+                </Link>
+            </Box>
+        </HStack>
+    </Container>
     </Box>
   )
 }
 
-export default function Simple() {
-  const { isOpen, onOpen, onClose } = useDisclosure()
-
-  return (
-    <>
-      <Box bg={useColorModeValue('gray.100', 'gray.900')} px={4}>
-        <Flex h={16} alignItems={'center'} justifyContent={'space-between'}>
-          <IconButton
-            size={'md'}
-            icon={isOpen ? <CloseIcon /> : <HamburgerIcon />}
-            aria-label={'Open Menu'}
-            display={{ md: 'none' }}
-            onClick={isOpen ? onClose : onOpen}
-          />
-          <HStack spacing={8} alignItems={'center'}>
-            <Box>Logo</Box>
-            <HStack as={'nav'} spacing={4} display={{ base: 'none', md: 'flex' }}>
-              {Links.map((link) => (
-                <NavLink key={link}>{link}</NavLink>
-              ))}
-            </HStack>
-          </HStack>
-          <Flex alignItems={'center'}>
-            <Menu>
-              <MenuButton
-                as={Button}
-                rounded={'full'}
-                variant={'link'}
-                cursor={'pointer'}
-                minW={0}>
-                <Avatar
-                  size={'sm'}
-                  src={
-                    'https://images.unsplash.com/photo-1493666438817-866a91353ca9?ixlib=rb-0.3.5&q=80&fm=jpg&crop=faces&fit=crop&h=200&w=200&s=b616b2c5b373a80ffc9636ba24f7a4a9'
-                  }
-                />
-              </MenuButton>
-              <MenuList>
-                <MenuItem>Link 1</MenuItem>
-                <MenuItem>Link 2</MenuItem>
-                <MenuDivider />
-                <MenuItem>Link 3</MenuItem>
-              </MenuList>
-            </Menu>
-          </Flex>
-        </Flex>
-
-        {isOpen ? (
-          <Box pb={4} display={{ md: 'none' }}>
-            <Stack as={'nav'} spacing={4}>
-              {Links.map((link) => (
-                <NavLink key={link}>{link}</NavLink>
-              ))}
-            </Stack>
-          </Box>
-        ) : null}
-      </Box>
-    </>
-  )
-}
+export default NavBar
